@@ -6,6 +6,7 @@ import store from './store'
 import Vant from 'vant'
 import 'vant/lib/index.css'
 import 'amfe-flexible'
+import './index.less'
 
 
 Vue.config.productionTip = false
