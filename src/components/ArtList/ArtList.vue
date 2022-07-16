@@ -5,7 +5,8 @@
       <!-- 上拉加载更多 -->
       <van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad" :immediate-check="false">
         <!-- 循环渲染文章的列表 -->
-        <art-item v-for="item in artlist" :key="item.art_id" :article="item"></art-item>
+        <art-item v-for="item in artlist" :key="item.art_id.toString()" :article="item" @remove-article="removeArticle">
+        </art-item>
       </van-list>
     </van-pull-refresh>
   </div>
@@ -80,6 +81,17 @@ export default {
     onRefresh () {
       console.log('触发了下拉刷新')
       this.initArtList(true)
+    },
+    // 从文章列表中移除指定 id 的文章
+    removeArticle (id) {
+      // 1. 炸楼操作
+      this.artlist = this.artlist.filter(item => item.art_id.toString() !== id)
+
+      // 2. 判断剩余数据的文章数量是否小于 10
+      if (this.artlist.length < 10) {
+        // 主动请求下一页的数据
+        this.initArtList()
+      }
     }
   },
   components: {
