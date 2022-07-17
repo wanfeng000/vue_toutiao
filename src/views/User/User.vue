@@ -45,6 +45,12 @@ import { mapActions, mapState, mapMutations } from 'vuex'
 export default {
   name: 'User',
   created () {
+    // 把下面这一行注释掉，因为 activated 在组件首次加载时也会调用一次
+    // this.initUserInfo()
+  },
+  // 被激活了
+  activated () {
+    // 只要组件被激活了，就重新初始化用户的信息
     this.initUserInfo()
   },
   methods: {

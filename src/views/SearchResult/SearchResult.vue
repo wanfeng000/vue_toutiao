@@ -55,6 +55,24 @@ export default {
       this.initSearchList()
     }
   },
+  beforeRouteLeave (to, from, next) {
+    from.meta.top = window.scrollY
+    setTimeout(() => {
+      next()
+    }, 0)
+  },
+  watch: {
+    kw () {
+      // 1. 重置关键数据
+      this.page = 1
+      this.artList = []
+      this.loading = false
+      this.finished = false
+
+      // 2. 请求数据
+      this.initSearchResult()
+    }
+  },
   components: {
     // 注册组件
     ArtItem

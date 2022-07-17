@@ -115,6 +115,12 @@ export default {
     // 请求所有的频道列表数据
     this.initAllChannel()
   },
+  // 导航离开该组件的对应路由时调用
+  // 可以访问组件实例 `this`
+  beforeRouteLeave (to, from, next) {
+    from.meta.top = window.scrollY
+    next()
+  },
   methods: {
     async initUserChannel () {
       // 1. 调用 API 接口

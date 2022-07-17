@@ -17,13 +17,13 @@ const routes = [
   {
     path: '/', component: Main, children: [
       // path 为"空字符串"的子路由规则，叫做"默认子路由"
-      { path: '', component: Home, name: 'home' },
+      { path: '', component: Home, name: 'home', meta: { isRecord: true, top: 0 } },
       { path: '/user', component: User, name: 'user' }
     ]
   },
   { path: '/search', component: Search, name: 'search' },
-  { path: '/search/:kw', component: SearchResult, name: 'search-result', props: true },
-  { path: '/article/:id', component: ArticleDetail, name: 'art-detail', props: true },
+  { path: '/search/:kw', component: SearchResult, name: 'search-result', props: true, meta: { isRecord: true, top: 0 } },
+  { path: '/article/:id', component: ArticleDetail, name: 'art-detail', props: true, meta: { isRecord: true, top: 0 } },
   { path: '/user/edit', component: UserEdit, name: 'user-edit' },
   { path: '/chat', component: Chat, name: 'chat' }
 ]
@@ -67,5 +67,16 @@ VueRouter.prototype.push = function push (location, onResolve, onReject) {
   // 通过 .catch 捕获错误
   return originalPush.call(this, location).catch(err => err)
 }
+
+// 全局后置钩子
+router.afterEach((to, from) => {
+  // 如果当前的路由的元信息中，isRecord 的值为 true
+  if (to.meta.isRecord) {
+    setTimeout(() => {
+      // 则把元信息中的 top 值设为滚动条纵向滚动的位置
+      window.scrollTo(0, to.meta.top)
+    }, 0)
+  }
+})
 
 export default router
