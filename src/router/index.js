@@ -7,6 +7,7 @@ import User from '@/views/User/User.vue'
 import Search from '@/views/Search/Search.vue'
 import SearchResult from '@/views/SearchResult/SearchResult.vue'
 import ArticleDetail from '@/views/ArticleDetail/ArticleDetail.vue'
+import UserEdit from '@/views/UserEdit/UserEdit.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -20,7 +21,8 @@ const routes = [
   },
   { path: '/search', component: Search, name: 'search' },
   { path: '/search/:kw', component: SearchResult, name: 'search-result', props: true },
-  { path: '/article/:id', component: ArticleDetail, name: 'art-detail', props: true }
+  { path: '/article/:id', component: ArticleDetail, name: 'art-detail', props: true },
+  { path: '/user/edit', component: UserEdit, name: 'user-edit' }
 ]
 
 const router = new VueRouter({
