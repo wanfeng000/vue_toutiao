@@ -70,7 +70,7 @@ export default {
       this.finished = false
 
       // 2. 请求数据
-      this.initSearchResult()
+      this.initSearchList()
     }
   },
   components: {
