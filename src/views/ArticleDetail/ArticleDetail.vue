@@ -121,7 +121,7 @@ export default {
       // 只要 id 值发生了变化，就清空旧的文章信息
       this.article = null
       // 并重新获取文章的详情数据
-      this.initArticleInfo()
+      this.initArticle()
     }
   },
   beforeRouteLeave (to, from, next) {
