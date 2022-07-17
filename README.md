@@ -2,6 +2,8 @@
 
 ## Project setup
 ```
+git clone https://github.com/CHJ-2002/vue_toutiao
+
 npm install
 ```
 
