@@ -8,6 +8,7 @@ import Search from '@/views/Search/Search.vue'
 import SearchResult from '@/views/SearchResult/SearchResult.vue'
 import ArticleDetail from '@/views/ArticleDetail/ArticleDetail.vue'
 import UserEdit from '@/views/UserEdit/UserEdit.vue'
+import Chat from '@/views/Chat/Chat.vue'
 Vue.use(VueRouter)
 
 const routes = [
@@ -22,7 +23,8 @@ const routes = [
   { path: '/search', component: Search, name: 'search' },
   { path: '/search/:kw', component: SearchResult, name: 'search-result', props: true },
   { path: '/article/:id', component: ArticleDetail, name: 'art-detail', props: true },
-  { path: '/user/edit', component: UserEdit, name: 'user-edit' }
+  { path: '/user/edit', component: UserEdit, name: 'user-edit' },
+  { path: '/chat', component: Chat, name: 'chat' }
 ]
 
 const router = new VueRouter({
