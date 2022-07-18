@@ -28,7 +28,7 @@ export default {
         // 用户的手机号
         mobile: '',
         // 登录的密码
-        code: ''
+        code: '246810'
       },
       // 表单的校验规则对象
       rules: {
