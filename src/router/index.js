@@ -1,14 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Login from '@/views/Login/Login.vue'
-import Main from '@/views/Main/Main.vue'
-import Home from '@/views/Home/Home.vue'
-import User from '@/views/User/User.vue'
-import Search from '@/views/Search/Search.vue'
-import SearchResult from '@/views/SearchResult/SearchResult.vue'
-import ArticleDetail from '@/views/ArticleDetail/ArticleDetail.vue'
-import UserEdit from '@/views/UserEdit/UserEdit.vue'
-import Chat from '@/views/Chat/Chat.vue'
+// import Login from '@/views/Login/Login.vue'
+// import Main from '@/views/Main/Main.vue'
+// import Home from '@/views/Home/Home.vue'
+// import User from '@/views/User/User.vue'
+// import Search from '@/views/Search/Search.vue'
+// import SearchResult from '@/views/SearchResult/SearchResult.vue'
+// import ArticleDetail from '@/views/ArticleDetail/ArticleDetail.vue'
+// import UserEdit from '@/views/UserEdit/UserEdit.vue'
+// import Chat from '@/views/Chat/Chat.vue'
+const Login = () => import('@/views/Login/Login.vue')
+const Main = () => import('@/views/Main/Main.vue')
+const Home = () => import('@/views/Home/Home.vue')
+const User = () => import('@/views/User/User.vue')
+const Search = () => import('@/views/Search/Search.vue')
+const SearchResult = () => import('@/views/SearchResult/SearchResult.vue')
+const ArticleDetail = () => import('@/views/ArticleDetail/ArticleDetail.vue')
+const UserEdit = () => import('@/views/UserEdit/UserEdit.vue')
+const Chat = () => import('@/views/Chat/Chat.vue')
+
 import store from '@/store/index.js'
 Vue.use(VueRouter)
 
