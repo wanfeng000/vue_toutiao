@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkvue_toutiao"]=self["webpackChunkvue_toutiao"]||[]).push([[991],{991:function(t,e,a){a.r(e),a.d(e,{default:function(){return v}});var r=function(){var t=this,e=t._self._c;return e("div",[e("keep-alive",[e("router-view")],1),e("van-tabbar",{attrs:{route:""}},[e("van-tabbar-item",{attrs:{icon:"home-o",to:"/"}},[t._v("首页")]),e("van-tabbar-item",{attrs:{icon:"user-o",to:"/user"}},[t._v("我的")])],1)],1)},u=[],n={name:"Main"},o=n,i=a(1),s=(0,i.Z)(o,r,u,!1,null,"22dacc5d",null),v=s.exports}}]);
+//# sourceMappingURL=991.87c52c45.js.map
